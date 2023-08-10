@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 body {
-    background: #306356;
+    background: #ebebff6e;
 }
 
 .container{
@@ -18,14 +18,12 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    -webkit-box-shadow: 4px 6px 22px -6px rgba(66, 68, 90, 0.3);
-    -moz-box-shadow: 4px 6px 22px -6px rgba(66, 68, 90, 0.3);
-    box-shadow: 4px 6px 22px -6px rgba(66, 68, 90, 0.3);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 
 .container > div::after {
     content: '';
-    background: #306356;
+    background: #f6f6fe00;
     opacity: 0.1;
     width: 100%;
     height: 100%;
@@ -46,8 +44,8 @@ body {
 .h1 {
     text-align: center;
     margin: 40px 0;
-    font-family: Oswald;
-    color: #fff;
+    font-family: 'Oswald';
+    color: #495057;
     font-size: 48px;
 }
 
@@ -55,6 +53,7 @@ img{
     aspect-ratio: 1 / 1;
     object-fit: cover;
     width: 100%;
+    height: 100%;
     transition: all 0.3s ease-out;
 }
 
@@ -68,7 +67,7 @@ body::-webkit-scrollbar-track {
  
 body::-webkit-scrollbar-thumb {
     border-radius: 16px;
-    background-color: #ffffffba;
+    background-color: #8c8c8c47;
     outline: none;
 }
 

@@ -1,27 +1,35 @@
 const container = document.querySelector('.container');
 const link = 'https://dog.ceo/api/breeds/image/random';
 
-function loadImages(numImages = 10){
+const loadImages = (numImages = 10) => {
     let i=0;
      while(i < numImages){
-     fetch(link)
-     .then(response=>response.json())
-     .then(data=>{
-        const div = document.createElement('div');
-        const img =  document.createElement('img');
-        img.src = data.message;
-        div.appendChild(img);
-        container.appendChild(div)
-     })
-     i++;
-    }   
+      fetch(link)
+      .then(res => {
+          if (res.ok) {
+              return res.json()
+          } else {
+              return Promise.reject(`Http error: ${res.status}`);
+          }
+        })
+        .then(res => {
+          const div = document.createElement('div');
+          const img =  document.createElement('img');
+          img.src = res.message;
+          div.append(img);
+          container.append(div)
+        })
+        .catch(error => {
+            console.error(error)
+        });
+        i++;
+      }   
    }
  
- loadImages();
+loadImages();
 
- window.addEventListener('scroll',()=>{
-    if(Math.ceil(window.scrollY + window.innerHeight) >= 
-      document.documentElement.scrollHeight){
+ window.addEventListener('scroll', () => {
+    if(Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight) {
       loadImages();
     }
 })
