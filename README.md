@@ -1,4 +1,5 @@
-# infinite-scrolling
-Infinite Scrolling Gallery
+# Infinite scrolling gallery
+Infinite scrolling gallery
 
-Using html, css and js
+Using HTML, CSS and JavaScript
+
